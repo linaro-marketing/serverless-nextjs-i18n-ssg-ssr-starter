@@ -44,19 +44,30 @@ Clone the repository and then run `yarn install`
 
 ## Deployment
 
-In order to deploy the project you can simply run:
+The `BUILD_ENV` should correlate to an `environments/.env.develop` file, containing your `NEXT_PUBLIC_SITE_URL` at a minimum. This URL will be prepended to `sitemap.xml` entries and used as the root domain in `next.config.js`.
+
+### Multi-env
+
+If you are deploying a multi-environment project (e.g staging/production versions of the app), you should utilise the `deploy.sh` script. 
+
+You need to create a separate S3 bucket for storing your multi-env `.serverless` cache folders.
+
+Edit the `deploy.sh` script with the path to your s3 bucket.
+
+Then you will be able to deploy your app using:
 
 ```
 BUILD_ENV=develop ./deploy.sh
 ```
-Or if you are only deploying to a single environment you could run:
+
+### Single env
+
+If you are only deploying to a single environment you could run:
 
 ```
 BUILD_ENV=main npx serverless
 ```
 
-The `BUILD_ENV` should correlate to an `environments/.env.develop` file, containing your `NEXT_PUBLIC_SITE_URL` at a minimum. This URL will be prepended to `sitemap.xml` entries and used as the root domain in `next.config.js`.
-
-You will also need to create a separate S3 bucket for storing your multi-env `.serverless` cache folders. See the `deploy.sh` script for more details.
+#### Credits
 
 Originally forked from [github.com/Xairoo/nextjs-i18n-static-page-starter](https://github.com/Xairoo/nextjs-i18n-static-page-starter) 

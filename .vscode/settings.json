@@ -1,0 +1,8 @@
+{
+    "search.exclude": {
+        "**/.next": true,
+        "**/.": true,
+        "**/.next": true,
+        "**/.next": true,
+    }
+}

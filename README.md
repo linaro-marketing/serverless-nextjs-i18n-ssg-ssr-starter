@@ -35,8 +35,28 @@ Clone the repository and then run `yarn install`
 -   Before running `BUILD_ENV=develop npx serverless` you will need to configure serverless via `--profile` or simply exporting your AWS credentials.
 -   Setup your environments
 
-## Export Static Pages
 
-`npm run export`
+## TODO 
+
+- Implement localized routes when suport from Next.js is available.
+- Currently serverless-nextjs does not replace the `public/sitemap.xml` on deployment. 
+  - A workaround could be to use the AWS cli to delete the current sitemap.xml before deployment.
+
+## Deployment
+
+In order to deploy the project you can simply run:
+
+```
+BUILD_ENV=develop ./deploy.sh
+```
+Or if you are only deploying to a single environment you could run:
+
+```
+BUILD_ENV=main npx serverless
+```
+
+The `BUILD_ENV` should correlate to an `environments/.env.develop` file, containing your `NEXT_PUBLIC_SITE_URL` at a minimum. This URL will be prepended to `sitemap.xml` entries and used as the root domain in `next.config.js`.
+
+You will also need to create a separate S3 bucket for storing your multi-env `.serverless` cache folders. See the `deploy.sh` script for more details.
 
 Originally forked from [github.com/Xairoo/nextjs-i18n-static-page-starter](https://github.com/Xairoo/nextjs-i18n-static-page-starter) 

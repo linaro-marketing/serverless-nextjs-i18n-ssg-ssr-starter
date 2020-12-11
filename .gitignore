@@ -25,3 +25,10 @@ yarn-debug.log*
 yarn-error.log*
 
 package-lock.json
+
+# serverless
+.serverless
+.serverless_nextjs
+
+#styleguidist docs
+styleguide

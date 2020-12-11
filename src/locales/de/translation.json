@@ -2,7 +2,10 @@
 	"siteMeta": {
 		"title": "Titel / DE"
 	},
+	"about": "Über",
+	"test": "Prüfung",
 	"site": "Seite",
+	"posts": "Blogeinträge",
 	"backTo": "Zurück zu",
 	"helloWorld": "Hallo Welt!",
 	"language": "Sprache"

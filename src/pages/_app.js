@@ -1,7 +1,6 @@
 import '../i18n/init';
-import '../styles/global.css';
-
 import i18next from 'i18next';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = function ({ Component, pageProps }) {
 	i18next.changeLanguage(pageProps.language);
